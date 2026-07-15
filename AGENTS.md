@@ -51,9 +51,10 @@ Do not use GitHub's web editor except when the local workflow is unavailable. Af
 - Apex A records: `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`.
 - `www` CNAME: `chessmediany-star.github.io`.
 - GitHub Pages provisions and installs HTTPS; Let's Encrypt issues the certificate.
+- **Enforce HTTPS** is enabled; HTTP requests redirect to HTTPS.
 - Never purchase or upload a separate GoDaddy certificate for this setup.
 - Never delete or change `CNAME` without explicit owner approval.
-- After DNS/domain changes, verify both hostnames and enable **Enforce HTTPS** when available.
+- After DNS/domain changes, verify both hostnames and keep **Enforce HTTPS** enabled.
 
 ## Strict documentation synchronization rule
 This rule is mandatory and part of the definition of done.
@@ -87,4 +88,4 @@ A review with no edits is insufficient. Do not use meaningless wording changes: 
 - Both Markdown files changed in the same commit.
 - Production was checked after deployment.
 
-Last verified: 2026-07-14
+Last verified: 2026-07-15
