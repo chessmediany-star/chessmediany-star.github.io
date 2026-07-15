@@ -6,7 +6,7 @@ Official public website for ChessMedia, a strategic creative agency led by Levi 
 - Hosting: GitHub Pages
 - Source: `main` branch, repository root
 - DNS provider and registrar: GoDaddy
-- HTTPS: provisioned by GitHub Pages and issued by Let's Encrypt
+- HTTPS: provisioned by GitHub Pages and issued by Let's Encrypt; **Enforce HTTPS** is enabled
 
 ## Product direction
 
@@ -71,9 +71,10 @@ Use GitHub's web editor only when the normal local workflow is unavailable. Sync
 - Apex A records: `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`.
 - `www` CNAME: `chessmediany-star.github.io`.
 - GitHub Pages provisions and installs HTTPS; Let's Encrypt issues the certificate.
+- **Enforce HTTPS** is enabled; requests to http://chessmedia.us/ redirect to https://chessmedia.us/.
 - Do not purchase or upload a separate GoDaddy certificate for this setup.
 - Do not delete or change `CNAME` without explicit owner approval.
-- After DNS or domain changes, verify both hostnames and enable **Enforce HTTPS** in GitHub Pages when available.
+- After DNS or domain changes, verify both hostnames and keep **Enforce HTTPS** enabled in GitHub Pages.
 
 ## Mandatory documentation policy
 
@@ -108,6 +109,7 @@ A review with no edits is insufficient. Do not make meaningless wording changes:
 
 | Date | Change | Operational impact |
 | --- | --- | --- |
+| 2026-07-15 | Enabled GitHub Pages **Enforce HTTPS** after the DNS check and certificate issuance completed. | All HTTP traffic now redirects to the secure HTTPS production site. |
 | 2026-07-14 | Added repository documentation and the mandatory documentation-synchronization policy. | Future contributors have a source of truth for product intent, development, DNS, HTTPS, and deployment. |
 
-Last verified: 2026-07-14
+Last verified: 2026-07-15
