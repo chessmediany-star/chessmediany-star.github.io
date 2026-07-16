@@ -77,7 +77,7 @@ A review with no edits is insufficient. Do not use meaningless wording changes: 
 - Do not add frameworks, build tools, analytics, cookies, third-party forms, or external services without explicit approval and documentation.
 - Never commit passwords, tokens, private keys, customer information, or account credentials.
 - Treat external image URLs as dependencies; verify and document replacements.
-- The contact form opens the visitor's email client using `mailto:`; it has no backend.
+- The contact section provides a direct email link and a required-field inquiry form. The form opens a prefilled `mailto:` draft to `chessmediany@gmail.com`; it has no backend and stores no visitor data.
 
 ## Verification checklist
 - Local static preview loads without missing files.

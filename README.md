@@ -46,7 +46,7 @@ Then open http://localhost:8000/. Do not rely only on opening `index.html` direc
 
 ## Contact behavior
 
-The inquiry form opens the visitor's email client using `mailto:` and sends to `chessmediany@gmail.com`. There is no form backend or stored submission database.
+The contact section includes a direct email link and a required-field inquiry form. Submitting the form opens the visitor's email client with a prefilled subject and body addressed to `chessmediany@gmail.com`. There is no form backend, no third-party form service, and no stored submission data.
 
 ## Deployment
 
@@ -109,6 +109,7 @@ A review with no edits is insufficient. Do not make meaningless wording changes:
 
 | Date | Change | Operational impact |
 | --- | --- | --- |
+| 2026-07-15 | Redesigned the Contact section and upgraded the inquiry form to create a prefilled email draft to `chessmediany@gmail.com`. | Visitors now have a clear direct-email option and a working form without a backend or stored personal data. |
 | 2026-07-15 | Enabled GitHub Pages **Enforce HTTPS** after the DNS check and certificate issuance completed. | All HTTP traffic now redirects to the secure HTTPS production site. |
 | 2026-07-14 | Added repository documentation and the mandatory documentation-synchronization policy. | Future contributors have a source of truth for product intent, development, DNS, HTTPS, and deployment. |
 
