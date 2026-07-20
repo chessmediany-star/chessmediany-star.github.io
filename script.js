@@ -7,17 +7,35 @@ document.querySelectorAll('[data-filter]').forEach(function(button){
     });
   });
 });
-document.getElementById('contact-form').addEventListener('submit',function(event){
+
+var contactForm=document.getElementById('contact-form');
+var submitButton=contactForm.querySelector('button[type="submit"],button');
+var defaultButtonText=submitButton.textContent;
+
+contactForm.addEventListener('submit',async function(event){
   event.preventDefault();
-  var data=new FormData(event.currentTarget);
-  var company=data.get('company');
-  var subject='New ChessMedia project inquiry'+(company?' — '+company:'');
-  var body=['Hello ChessMedia,','','I would like to discuss a project.','',
-    'Name: '+data.get('name'),
-    'Email: '+data.get('email'),
-    'Company: '+(company||'Not provided'),
-    'Phone: '+(data.get('phone')||'Not provided'),
-    '','Project details:',''+data.get('message')
-  ].join('\n');
-  window.location.href='mailto:chessmediany@gmail.com?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
+  if(!contactForm.reportValidity()) return;
+  submitButton.disabled=true;
+  submitButton.textContent='SENDING...';
+  var data=new FormData(contactForm);
+  data.append('_subject','New ChessMedia project inquiry');
+  data.append('_template','table');
+  data.append('_captcha','false');
+  data.append('_next','https://chessmedia.us/?contact=sent#contact');
+  try{
+    var response=await fetch('https://formsubmit.co/ajax/chessmediany@gmail.com',{
+      method:'POST',
+      headers:{'Accept':'application/json'},
+      body:data
+    });
+    var result=await response.json();
+    if(!response.ok||result.success===false) throw new Error('Submission failed');
+    contactForm.reset();
+    submitButton.textContent='MESSAGE SENT ✓';
+  }catch(error){
+    submitButton.disabled=false;
+    submitButton.textContent='TRY AGAIN';
+    window.alert('We could not send your message. Please email chessmediany@gmail.com directly.');
+    window.setTimeout(function(){submitButton.textContent=defaultButtonText;},3000);
+  }
 });
