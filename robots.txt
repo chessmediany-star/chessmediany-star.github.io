@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /portfolio-manager-7k3.html
 
 Sitemap: https://chessmedia.us/sitemap.xml
