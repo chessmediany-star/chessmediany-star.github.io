@@ -338,3 +338,31 @@
 @media(max-width:900px){#portfolio .sectionHead{display:block}#portfolio .filters{justify-content:flex-start;margin-top:28px}#portfolio .works{column-gap:20px;row-gap:42px}}
 @media(max-width:680px){#portfolio .filters{gap:7px;margin-top:22px}#portfolio .filters button{min-height:36px;padding:9px 12px}#portfolio .works{grid-template-columns:1fr;row-gap:38px;margin-top:42px}#portfolio .works article>div,#portfolio .works article>a>div{aspect-ratio:4/3}#portfolio .works h3{font-size:26px}}
 @media(prefers-reduced-motion:reduce){#portfolio .works article img,#portfolio .works article div span,#portfolio .works article>div:after,#portfolio .filters button{transition:none}}
+
+
+/* 2026-07-21 premium contact refinement */
+#contact.contact{grid-template-columns:minmax(0,.88fr) minmax(520px,1.12fr);align-items:start;gap:clamp(58px,8vw,128px);padding-top:110px;padding-bottom:110px;background:radial-gradient(circle at 88% 12%,rgba(184,155,94,.055),transparent 31%),linear-gradient(135deg,#0b0c0c,#111311)}
+#contact>div:first-child{padding-top:10px}
+#contact h2{max-width:650px;margin:38px 0 30px}
+#contact .intro{max-width:590px;margin:0;color:#a4a69f;font-size:15px;line-height:1.85}
+#contact .contactDetails{margin-top:50px;padding:30px 0 25px}
+#contact .contactDetails a{margin-top:17px;color:var(--text);font-size:clamp(22px,2.15vw,32px);line-height:1.2;overflow-wrap:anywhere;transition:color .25s ease,border-color .25s ease}
+#contact .contactDetails a:hover,#contact .contactDetails a:focus-visible{color:#d2b774;border-color:#d2b774;outline:0}
+#contact .contactDetails span{max-width:520px;margin-top:18px;color:#8f928c}
+#contact form{grid-template-columns:repeat(2,minmax(0,1fr));gap:26px 34px;padding:clamp(30px,3.2vw,48px);background:#111312;border:1px solid #30322f;border-top-color:rgba(184,155,94,.65);box-shadow:0 28px 80px rgba(0,0,0,.28)}
+#contact .formIntro{padding-bottom:25px;margin-bottom:2px;border-bottom:1px solid #343632}
+#contact .formIntro span{display:block;margin-bottom:17px}
+#contact .formIntro p{max-width:620px;margin:0;color:#c7c2b7;font-size:clamp(18px,1.7vw,24px);line-height:1.48}
+#contact label{color:#a3a59f;font-size:8px;letter-spacing:2.4px}
+#contact input,#contact textarea{margin-top:10px;padding:14px 0;color:#f0ece2;border-bottom-color:#3d403b;font-size:13px;line-height:1.5;transition:border-color .25s ease,background .25s ease}
+#contact input::placeholder,#contact textarea::placeholder{color:#70736e;opacity:1}
+#contact input:hover,#contact textarea:hover{border-bottom-color:#5a5d56}
+#contact input:focus,#contact textarea:focus{border-color:var(--gold);background:linear-gradient(90deg,rgba(184,155,94,.035),transparent)}
+#contact textarea{height:145px;min-height:145px}
+#contact .full{margin-top:2px}
+#contact button{min-height:58px;margin-top:4px;padding:20px 24px;text-align:center;transition:background .25s ease,transform .25s ease,box-shadow .25s ease}
+#contact button:hover,#contact button:focus-visible{background:#d0b777;transform:translateY(-2px);box-shadow:0 14px 30px rgba(0,0,0,.22)}
+#contact .privacy{margin:-8px 0 0;color:#777a74}
+@media(max-width:1050px){#contact.contact{grid-template-columns:1fr;gap:60px}#contact>div:first-child{max-width:760px}#contact form{max-width:900px;width:100%}}
+@media(max-width:680px){#contact.contact{gap:44px;padding-top:78px;padding-bottom:78px}#contact h2{margin-top:28px}#contact form{grid-template-columns:1fr;gap:24px;padding:28px 22px}#contact .formIntro,#contact .full,#contact button,#contact .privacy{grid-column:span 1}#contact .formIntro{padding-bottom:22px;margin-bottom:0}#contact textarea{height:130px;min-height:130px}#contact .contactDetails{margin-top:38px}}
+@media(prefers-reduced-motion:reduce){#contact .contactDetails a,#contact input,#contact textarea,#contact button{transition:none}}
