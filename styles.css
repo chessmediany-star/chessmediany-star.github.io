@@ -292,3 +292,17 @@
 .clientLogo.isActive:hover img,.clientLogo.isActive:focus-visible img{filter:none;opacity:1;transform:scale(1.04)}
 @media(max-width:760px){.clientLogoGrid{width:100%;aspect-ratio:1/1;justify-self:stretch}.clientLogo{min-height:0;padding:32px}.clientLogo img{max-height:42%}}
 @media(prefers-reduced-motion:reduce){.clientLogo{transition:none}.clientLogo img{transition:none}}
+
+
+/* 2026-07-21 frameless hero chess messages */
+.hero .piece{right:5vw;top:145px;width:min(520px,40vw);height:620px;aspect-ratio:auto;display:block;pointer-events:none}
+.hero .piece:before{display:none}
+.hero .piece .heroChessMessages{position:relative;inset:auto;width:100%;height:100%;overflow:visible;border:0;background:transparent;box-shadow:none}
+.hero .piece .heroChessMessages:before,.hero .piece .heroChessMessages:after{display:none}
+.hero .piece .heroChessSymbol{left:50%;top:36%;z-index:1;color:rgba(196,164,96,.5);font-size:clamp(180px,17vw,255px);text-shadow:0 0 58px rgba(184,155,94,.16)}
+.hero .piece .heroChessPanel{left:0;right:0;bottom:42px;z-index:2;width:auto;padding:0;border:0;background:transparent;box-shadow:none;backdrop-filter:none}
+.hero .piece .heroChessPanel small{margin-bottom:12px}
+.hero .piece .heroChessPanel strong{font-size:clamp(34px,3.2vw,50px);text-shadow:0 5px 24px rgba(0,0,0,.75)}
+.hero .piece .heroChessPanel p{max-width:34ch;color:#aaa59b;text-shadow:0 2px 12px #000}
+@media(max-width:900px){.hero .piece{right:2vw;top:175px;width:46vw;height:560px;opacity:1}.hero .piece .heroChessSymbol{top:35%;font-size:clamp(145px,21vw,210px)}.hero .piece .heroChessPanel{left:7%;right:3%;bottom:50px;padding:0}.hero .piece .heroChessPanel strong{font-size:clamp(28px,4vw,38px)}}
+@media(max-width:600px){.hero .piece{right:-20vw;top:190px;width:76vw;height:500px;opacity:.74}.hero .piece .heroChessSymbol{top:34%;font-size:36vw}.hero .piece .heroChessPanel{left:16%;right:7%;bottom:60px;padding:0}.hero .piece .heroChessPanel strong{font-size:22px}.hero .piece .heroChessPanel p{display:none}}
