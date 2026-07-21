@@ -377,3 +377,10 @@
 #contact button{font-size:11px;letter-spacing:3px}
 #contact .privacy{font-size:11px;line-height:1.6}
 @media(max-width:680px){#contact .formIntro span{font-size:9px}#contact .formIntro p{font-size:22px}#contact label{font-size:9px}#contact input,#contact textarea,#contact input::placeholder,#contact textarea::placeholder{font-size:15px}#contact button{font-size:10px}}
+
+
+/* 2026-07-21 ChessMedia chess-piece cursor */
+@media (pointer:fine){
+  html,body,body *{cursor:url('/chessmedia-icon.png?v=20260721') 8 8,auto!important}
+  a,button,[role='button'],input,textarea,select,label,summary{cursor:url('/chessmedia-icon.png?v=20260721') 8 8,pointer!important}
+}
