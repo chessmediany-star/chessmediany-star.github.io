@@ -20,3 +20,35 @@
 #services .serviceList p{grid-area:copy;color:#b8b7b2;font-size:14px;line-height:1.65;margin:0;max-width:500px}
 #services .serviceList b{grid-area:arrow;align-self:center;justify-self:end;color:var(--gold);font-size:18px;font-weight:400}
 @media(max-width:800px){#services .serviceList{grid-template-columns:1fr}#services .serviceList article{min-height:170px;padding:26px 22px;grid-template-columns:34px 1fr 26px;gap:12px 14px}#services .serviceList article:hover{padding-left:22px}.portrait{height:560px}}
+
+/* 2026-07-21 animated chess opening */
+html.introRunning,html.introRunning body{overflow:hidden}
+.chessIntro{position:fixed;inset:0;z-index:9999;display:grid;grid-template-rows:auto 1fr auto;background:#050606;color:#f7f4ed;overflow:hidden;opacity:0;visibility:hidden;transition:opacity .75s ease,visibility .75s ease}
+.chessIntro.isActive{opacity:1;visibility:visible}
+.chessIntro::before{content:"";position:absolute;inset:-20%;background:radial-gradient(circle at 68% 45%,rgba(184,155,94,.14),transparent 24%),linear-gradient(115deg,transparent 46%,rgba(255,255,255,.025) 46.2%,transparent 46.5%);animation:introSweep 6s linear infinite;pointer-events:none}
+.introBrand{position:relative;z-index:2;display:flex;align-items:center;gap:20px;padding:34px 5vw;border-bottom:1px solid rgba(255,255,255,.12)}
+.introBrand img{width:158px;height:auto;filter:brightness(0) invert(1)}
+.introBrand span{font-size:9px;letter-spacing:4px;color:var(--gold)}
+.introSkip{position:absolute;z-index:3;right:5vw;top:41px;border:0;border-bottom:1px solid rgba(184,155,94,.7);padding:7px 0;background:transparent;color:#ddd8ce;font-size:9px;letter-spacing:2px;cursor:pointer}
+.introStage{position:relative;z-index:2;display:grid;grid-template-columns:minmax(300px,.85fr) minmax(420px,1.15fr);align-items:center;width:min(1280px,90vw);margin:auto}
+.introPieceGhost{font-family:Georgia,"Times New Roman",serif;font-size:clamp(290px,36vw,620px);line-height:.75;color:rgba(184,155,94,.16);text-shadow:0 0 70px rgba(184,155,94,.08);transform:translateX(-4%) scale(.94);transition:opacity .25s ease,transform .55s cubic-bezier(.2,.8,.2,1);user-select:none}
+.introPieceGhost.pulse{animation:introPiecePulse .6s cubic-bezier(.2,.8,.2,1)}
+.introCopy{position:relative;padding-left:5vw;border-left:1px solid rgba(255,255,255,.14)}
+.introCopy>p:first-child{margin:0 0 24px;color:var(--gold);font-size:10px;letter-spacing:5px}
+.introCopy h1{margin:0;font-family:Georgia,serif;font-size:clamp(46px,6vw,98px);font-weight:400;line-height:.88;letter-spacing:-3px}
+.introCopy h1 span,.introCopy h1 em{display:block}
+.introCopy h1 em{margin-top:12px;color:var(--gold);font-weight:400}
+.introCopy>p:last-child{margin:28px 0 0;max-width:420px;color:#aaa79f;font-size:14px;line-height:1.7;letter-spacing:.4px}
+.introCopy.swap{animation:introCopyReveal .55s ease both}
+.introRail{position:absolute;right:0;bottom:-80px;display:flex;align-items:center;gap:28px;color:#4f504d;font-size:26px}
+.introRail span{transition:color .3s ease,transform .3s ease,opacity .3s ease;opacity:.45}
+.introRail span.active{color:var(--gold);opacity:1;transform:translateY(-7px) scale(1.18)}
+.introProgress{position:relative;z-index:2;height:3px;background:#171817}
+.introProgress i{display:block;width:100%;height:100%;background:var(--gold);transform-origin:left;animation:introProgress 4.9s linear forwards}
+.chessIntro.isLeaving{opacity:0;visibility:hidden;transform:scale(1.02)}
+@keyframes introProgress{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes introPiecePulse{0%{opacity:.1;transform:translateX(-9%) scale(.88) rotate(-3deg)}100%{opacity:1;transform:translateX(-4%) scale(.94) rotate(0)}}
+@keyframes introCopyReveal{0%{opacity:0;transform:translateY(20px)}100%{opacity:1;transform:translateY(0)}}
+@keyframes introSweep{from{transform:translateX(-5%)}to{transform:translateX(5%)}}
+@media(max-width:760px){.introBrand{padding:24px 22px}.introBrand img{width:125px}.introBrand span{display:none}.introSkip{top:29px;right:22px}.introStage{grid-template-columns:1fr;text-align:center;width:calc(100vw - 36px)}.introPieceGhost{position:absolute;inset:50% auto auto 50%;font-size:74vw;transform:translate(-50%,-58%);opacity:.55}.introPieceGhost.pulse{animation:none}.introCopy{padding:20px 10px;border:0}.introCopy h1{font-size:clamp(42px,14vw,70px);letter-spacing:-2px}.introCopy>p:last-child{margin:22px auto 0}.introRail{position:relative;justify-content:center;right:auto;bottom:auto;margin-top:65px;gap:19px;font-size:22px}}
+@media(prefers-reduced-motion:reduce){.chessIntro::before,.introProgress i,.introPieceGhost.pulse,.introCopy.swap{animation:none!important}}
