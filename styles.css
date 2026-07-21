@@ -279,3 +279,16 @@
 .mediaLightbox.isVideo video{display:block}
 .mediaLightbox:not(.isVideo) img{display:block}
 .mediaLightbox:not(.isVideo) video{display:none}
+
+
+/* 2026-07-21 rotating trusted-client showcase */
+.clientLogoGrid{position:relative;display:block;aspect-ratio:1/1;width:min(100%,700px);justify-self:end;overflow:hidden;background:#ece9e0;isolation:isolate}
+.clientLogo{position:absolute;inset:0;display:flex;min-height:0;padding:clamp(38px,6vw,82px);opacity:0;visibility:hidden;pointer-events:none;transform:translateY(24px) scale(.985);box-shadow:none;transition:opacity .85s ease,transform .85s cubic-bezier(.2,.8,.2,1),visibility 0s linear .85s}
+.clientLogo img{max-width:84%;max-height:43%;opacity:0;filter:grayscale(1);transform:scale(.94);transition:opacity .8s ease .08s,filter .65s ease,transform .85s cubic-bezier(.2,.8,.2,1)}
+.clientLogo span{left:clamp(20px,3vw,38px);bottom:clamp(18px,3vw,34px);font-size:8px;letter-spacing:1.7px}
+.clientLogo.isActive{z-index:2;opacity:1;visibility:visible;pointer-events:auto;transform:none;background:#f4f1e8;box-shadow:inset 0 0 0 1px rgba(184,155,94,.18);transition-delay:0s}
+.clientLogo.isActive img{opacity:.7;filter:grayscale(1);transform:none}
+.clientLogo.isActive:hover,.clientLogo.isActive:focus-visible{transform:none;background:#fffdf7;box-shadow:inset 0 0 0 1px rgba(184,155,94,.45),0 22px 55px rgba(0,0,0,.3)}
+.clientLogo.isActive:hover img,.clientLogo.isActive:focus-visible img{filter:none;opacity:1;transform:scale(1.04)}
+@media(max-width:760px){.clientLogoGrid{width:100%;aspect-ratio:1/1;justify-self:stretch}.clientLogo{min-height:0;padding:32px}.clientLogo img{max-height:42%}}
+@media(prefers-reduced-motion:reduce){.clientLogo{transition:none}.clientLogo img{transition:none}}
