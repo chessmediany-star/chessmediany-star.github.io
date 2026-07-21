@@ -366,3 +366,14 @@
 @media(max-width:1050px){#contact.contact{grid-template-columns:1fr;gap:60px}#contact>div:first-child{max-width:760px}#contact form{max-width:900px;width:100%}}
 @media(max-width:680px){#contact.contact{gap:44px;padding-top:78px;padding-bottom:78px}#contact h2{margin-top:28px}#contact form{grid-template-columns:1fr;gap:24px;padding:28px 22px}#contact .formIntro,#contact .full,#contact button,#contact .privacy{grid-column:span 1}#contact .formIntro{padding-bottom:22px;margin-bottom:0}#contact textarea{height:130px;min-height:130px}#contact .contactDetails{margin-top:38px}}
 @media(prefers-reduced-motion:reduce){#contact .contactDetails a,#contact input,#contact textarea,#contact button{transition:none}}
+
+
+/* 2026-07-21 larger contact typography */
+#contact .formIntro span{font-size:10px;letter-spacing:4px;font-weight:600}
+#contact .formIntro p{font-size:clamp(23px,2.15vw,31px);line-height:1.42}
+#contact label{font-size:10px;letter-spacing:2.8px;font-weight:600}
+#contact input,#contact textarea{font-size:16px;line-height:1.55}
+#contact input::placeholder,#contact textarea::placeholder{font-size:16px}
+#contact button{font-size:11px;letter-spacing:3px}
+#contact .privacy{font-size:11px;line-height:1.6}
+@media(max-width:680px){#contact .formIntro span{font-size:9px}#contact .formIntro p{font-size:22px}#contact label{font-size:9px}#contact input,#contact textarea,#contact input::placeholder,#contact textarea::placeholder{font-size:15px}#contact button{font-size:10px}}
