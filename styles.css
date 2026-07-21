@@ -315,3 +315,26 @@
 .clientLogo img{max-width:72%;max-height:46%}
 @media(max-width:900px){.trustedClients{grid-template-columns:1fr;gap:42px}.clientLogoGrid{width:100%;max-width:780px;justify-self:stretch;aspect-ratio:16/7}}
 @media(max-width:600px){.clientLogoGrid{aspect-ratio:16/9}.clientLogo{padding:24px}.clientLogo img{max-width:82%;max-height:46%}}
+
+
+/* 2026-07-21 premium portfolio grid */
+#portfolio .sectionHead{gap:48px}
+#portfolio .filters{justify-content:flex-end;gap:8px;margin:0 0 25px}
+#portfolio .filters button{min-height:38px;padding:10px 16px;border:1px solid #30322f;background:transparent;color:#9a9c97;font-size:8px;letter-spacing:1.4px;text-transform:uppercase;transition:color .25s ease,border-color .25s ease,background .25s ease}
+#portfolio .filters button:hover,#portfolio .filters button:focus-visible{color:var(--text);border-color:#66685f;outline:0}
+#portfolio .filters button.active{background:var(--gold);border-color:var(--gold);color:#111}
+#portfolio .works{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:32px;row-gap:54px;margin-top:58px}
+#portfolio .works article,#portfolio .works article.wide{grid-column:auto;min-width:0}
+#portfolio .works article>a{display:block}
+#portfolio .works article>div,#portfolio .works article>a>div{position:relative;height:auto;aspect-ratio:4/3;overflow:hidden;background:#111312;isolation:isolate}
+#portfolio .works article>div:after,#portfolio .works article>a>div:after{content:"";position:absolute;inset:0;z-index:1;background:rgba(5,6,6,.08);transition:background .35s ease;pointer-events:none}
+#portfolio .works article img,#portfolio .works article>a>div img{display:block;width:100%;height:100%;object-fit:contain;object-position:center;transition:transform .55s cubic-bezier(.2,.8,.2,1),filter .35s ease}
+#portfolio .works article:hover img,#portfolio .works article:focus-within img{transform:scale(1.025)}
+#portfolio .works article:hover>div:after,#portfolio .works article:focus-within>div:after,#portfolio .works article:hover>a>div:after,#portfolio .works article:focus-within>a>div:after{background:rgba(5,6,6,.46)}
+#portfolio .works article div span,#portfolio .works article>a>div span{left:50%;right:auto;bottom:50%;z-index:2;padding:0 0 8px;background:transparent;color:#f0ece2;border-bottom:1px solid var(--gold);font-size:9px;letter-spacing:2px;opacity:0;transform:translate(-50%,14px);white-space:nowrap;transition:opacity .3s ease,transform .35s ease}
+#portfolio .works article:hover div span,#portfolio .works article:focus-within div span{opacity:1;transform:translate(-50%,50%)}
+#portfolio .works small{display:block;margin-top:18px;color:var(--gold);font-size:8px;letter-spacing:2px;text-transform:uppercase}
+#portfolio .works h3{margin:8px 0 0;color:var(--text);font-family:Georgia,serif;font-size:clamp(24px,2.15vw,34px);font-weight:400;line-height:1.08;letter-spacing:-.025em}
+@media(max-width:900px){#portfolio .sectionHead{display:block}#portfolio .filters{justify-content:flex-start;margin-top:28px}#portfolio .works{column-gap:20px;row-gap:42px}}
+@media(max-width:680px){#portfolio .filters{gap:7px;margin-top:22px}#portfolio .filters button{min-height:36px;padding:9px 12px}#portfolio .works{grid-template-columns:1fr;row-gap:38px;margin-top:42px}#portfolio .works article>div,#portfolio .works article>a>div{aspect-ratio:4/3}#portfolio .works h3{font-size:26px}}
+@media(prefers-reduced-motion:reduce){#portfolio .works article img,#portfolio .works article div span,#portfolio .works article>div:after,#portfolio .filters button{transition:none}}
