@@ -40,3 +40,96 @@
 @media(max-width:900px){.piece{opacity:1}.piece img,.piece:before{opacity:.42}.heroChessSymbol{left:25%;top:70px}.heroChessPanel{left:26%;bottom:95px;width:58%;padding:18px 20px}.heroChessPanel strong{font-size:28px}}
 @media(max-width:600px){.heroChessSymbol{left:45%;top:90px;font-size:64px}.heroChessPanel{left:43%;bottom:120px;width:52%;padding:15px 14px}.heroChessPanel strong{font-size:21px}.heroChessPanel p{display:none}.heroChessPanel small{letter-spacing:2px}.heroChessDots{margin-top:12px}.heroChessDots i{width:10px}.heroChessDots i.active{width:20px}}
 @media(prefers-reduced-motion:reduce){.heroChessMessages.isSwapping .heroChessSymbol,.heroChessMessages.isSwapping .heroChessPanel{animation:none}}
+
+
+/* 2026-07-21 square rotating chess animation stage */
+.piece{
+  right:5vw;
+  top:145px;
+  width:min(520px,42vw);
+  height:auto;
+  aspect-ratio:1;
+  display:block;
+}
+.piece:before{display:none}
+.piece .heroChessMessages{
+  position:relative;
+  inset:auto;
+  width:100%;
+  height:100%;
+  aspect-ratio:1;
+  overflow:hidden;
+  border:1px solid rgba(184,155,94,.38);
+  background:
+    radial-gradient(circle at 50% 34%,rgba(184,155,94,.18),transparent 31%),
+    linear-gradient(145deg,#171818 0%,#0b0c0c 58%,#050606 100%);
+  box-shadow:0 35px 90px rgba(0,0,0,.5),inset 0 0 0 1px rgba(255,255,255,.025);
+}
+.piece .heroChessMessages:before{
+  content:"";
+  position:absolute;
+  inset:18px;
+  border:1px solid rgba(184,155,94,.16);
+  background:
+    linear-gradient(rgba(184,155,94,.045) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(184,155,94,.045) 1px,transparent 1px);
+  background-size:48px 48px;
+  pointer-events:none;
+}
+.piece .heroChessMessages:after{
+  content:"";
+  position:absolute;
+  width:70%;
+  height:70%;
+  left:15%;
+  top:4%;
+  border:1px solid rgba(184,155,94,.13);
+  border-radius:50%;
+  box-shadow:0 0 90px rgba(184,155,94,.08);
+  pointer-events:none;
+}
+.piece .heroChessSymbol{
+  left:50%;
+  top:39%;
+  z-index:1;
+  transform:translate(-50%,-50%);
+  font-size:clamp(170px,17vw,245px);
+  line-height:1;
+  color:rgba(196,164,96,.38);
+  text-shadow:0 0 48px rgba(184,155,94,.16);
+}
+.piece .heroChessPanel{
+  left:28px;
+  right:28px;
+  bottom:28px;
+  z-index:2;
+  width:auto;
+  padding:22px 24px 20px;
+  border:1px solid rgba(184,155,94,.28);
+  background:linear-gradient(135deg,rgba(18,19,19,.96),rgba(7,8,8,.92));
+  box-shadow:0 18px 40px rgba(0,0,0,.34);
+  backdrop-filter:blur(8px);
+}
+.piece .heroChessPanel strong{font-size:clamp(30px,3vw,44px)}
+.piece .heroChessPanel p{max-width:32ch}
+@keyframes heroPieceSwap{
+  0%{opacity:0;transform:translate(-62%,-50%) rotate(-9deg) scale(.78)}
+  100%{opacity:1;transform:translate(-50%,-50%) rotate(0) scale(1)}
+}
+@media(max-width:900px){
+  .piece{right:2vw;top:180px;width:46vw;opacity:1}
+  .piece .heroChessPanel{left:20px;right:20px;bottom:20px;width:auto;padding:17px 18px}
+  .piece .heroChessSymbol{left:50%;top:38%;font-size:clamp(130px,20vw,190px)}
+  .piece .heroChessPanel strong{font-size:clamp(24px,4vw,34px)}
+}
+@media(max-width:600px){
+  .piece{right:-22vw;top:190px;width:72vw;opacity:.78}
+  .piece .heroChessMessages{opacity:1}
+  .piece .heroChessMessages:before{inset:10px;background-size:34px 34px}
+  .piece .heroChessSymbol{left:50%;top:37%;font-size:34vw}
+  .piece .heroChessPanel{left:14px;right:14px;bottom:14px;width:auto;padding:13px 14px}
+  .piece .heroChessPanel strong{font-size:20px}
+  .piece .heroChessPanel p{display:none}
+  .piece .heroChessPanel small{letter-spacing:2px}
+  .piece .heroChessDots{margin-top:10px}
+}
