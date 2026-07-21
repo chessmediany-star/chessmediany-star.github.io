@@ -165,3 +165,9 @@
   .piece{right:-14vw;top:180px;width:58vw;height:88vw;max-height:none;aspect-ratio:2/3}
   .piece .heroChessSymbol{top:34%;font-size:36vw}
 }
+
+
+/* 2026-07-21 fixed portrait ratio */
+.piece{height:auto;max-height:none;aspect-ratio:2/3}
+@media(max-width:900px){.piece{height:auto;max-height:none;aspect-ratio:2/3}}
+@media(max-width:600px){.piece{height:auto;max-height:none;aspect-ratio:2/3}}
