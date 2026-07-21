@@ -8,6 +8,7 @@ document.querySelectorAll('[data-filter]').forEach(function(button){
   });
 });
 
+if(document.getElementById('contact-form')){
 var contactForm=document.getElementById('contact-form');
 var submitButton=contactForm.querySelector('button[type="submit"],button');
 var defaultButtonText=submitButton.textContent;
@@ -41,6 +42,8 @@ contactForm.addEventListener('submit',async function(event){
 });
 
 
+}
+
 // Rotating chess messages in the hero image
 (()=>{const wrap=document.querySelector(".heroChessMessages");if(!wrap)return;const steps=[{piece:"♔",title:"KING",line:"OF MARKETING",note:"Strategy leads every winning move."},{piece:"♕",title:"QUEEN",line:"OF CREATIVITY",note:"Ideas with the power to command attention."},{piece:"♖",title:"ROOK",line:"OF BRAND BUILDING",note:"Strong foundations. Unmistakable presence."},{piece:"♗",title:"BISHOP",line:"OF STRATEGY",note:"The sharp angle that opens new opportunity."},{piece:"♘",title:"KNIGHT",line:"OF BOLD MOVES",note:"Unexpected thinking that changes the board."},{piece:"♙",title:"PAWN",line:"OF POSSIBILITY",note:"Every great brand begins with one move."}];const piece=wrap.querySelector("[data-hero-piece]");const kicker=wrap.querySelector("[data-hero-kicker]");const title=wrap.querySelector("[data-hero-title]");const line=wrap.querySelector("[data-hero-line]");const note=wrap.querySelector("[data-hero-note]");const dots=[...wrap.querySelectorAll(".heroChessDots i")];let index=0;const render=()=>{const step=steps[index];piece.textContent=step.piece;kicker.textContent=String(index+1).padStart(2,"0")+" — "+step.title;title.textContent=step.title;line.textContent=step.line;note.textContent=step.note;dots.forEach((dot,i)=>dot.classList.toggle("active",i===index));wrap.classList.remove("isSwapping");void wrap.offsetWidth;wrap.classList.add("isSwapping")};render();if(!matchMedia("(prefers-reduced-motion: reduce)").matches)setInterval(()=>{index=(index+1)%steps.length;render()},1700)})();
 
@@ -50,3 +53,13 @@ contactForm.addEventListener('submit',async function(event){
 
 // Typewriter animation for the main hero headline
 (()=>{const heading=document.querySelector(".heroCopy h1");if(!heading)return;const fullText="Marketing That Moves Your Business Forward";if(matchMedia("(prefers-reduced-motion: reduce)").matches){heading.setAttribute("aria-label",fullText);return}const lines=[{text:"Marketing That",tag:"span"},{text:"Moves Your",tag:"span"},{text:"Business Forward",tag:"em"}];heading.setAttribute("aria-label",fullText);heading.innerHTML='<span class="typeLine"></span><br><span class="typeLine"></span><br><em class="typeLine"></em><span class="typeCursor" aria-hidden="true"></span>';const targets=[...heading.querySelectorAll(".typeLine")];let line=0;let character=0;const typeNext=()=>{if(line>=lines.length){heading.classList.add("typingComplete");return}const current=lines[line];targets[line].textContent=current.text.slice(0,character+1);character+=1;if(character<current.text.length){setTimeout(typeNext,58+Math.random()*42)}else{line+=1;character=0;setTimeout(typeNext,230)}};setTimeout(typeNext,450)})();
+
+
+// Featured client project rotation
+(()=>{const wrap=document.querySelector("[data-featured-showcase]");if(!wrap)return;const slides=[...wrap.querySelectorAll(".featuredSlide")];const dots=[...wrap.querySelectorAll(".featuredProgress i")];if(slides.length<2||matchMedia("(prefers-reduced-motion: reduce)").matches)return;let index=0;setInterval(()=>{slides[index].classList.remove("active");slides[index].setAttribute("aria-hidden","true");dots[index]?.classList.remove("active");index=(index+1)%slides.length;slides[index].classList.add("active");slides[index].setAttribute("aria-hidden","false");dots[index]?.classList.add("active")},4600)})();
+
+// Subtle rotating emphasis for verified client logos
+(()=>{const logos=[...document.querySelectorAll(".clientLogo")];if(logos.length<2||matchMedia("(prefers-reduced-motion: reduce)").matches)return;let index=0;setInterval(()=>{logos[index].classList.remove("isActive");index=(index+1)%logos.length;logos[index].classList.add("isActive")},1450)})();
+
+// Client media lightbox
+(()=>{const dialog=document.querySelector(".mediaLightbox");if(!dialog)return;const image=dialog.querySelector("img");const close=dialog.querySelector(".lightboxClose");const open=card=>{image.src=card.dataset.lightbox;image.alt=card.dataset.caption||"";dialog.showModal()};document.querySelectorAll("[data-lightbox]").forEach(card=>{card.addEventListener("click",()=>open(card));card.addEventListener("keydown",event=>{if(event.key==="Enter"||event.key===" "){event.preventDefault();open(card)}})});close?.addEventListener("click",()=>dialog.close());dialog.addEventListener("click",event=>{if(event.target===dialog)dialog.close()});document.addEventListener("keydown",event=>{if(event.key==="Escape"&&dialog.open)dialog.close()})})();
