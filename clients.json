@@ -1,0 +1,73 @@
+{
+  "clients": [
+    {
+      "slug": "ketarim",
+      "name": "כתרים",
+      "logo": "ketarim-logo.png",
+      "categories": [
+        "Advertising",
+        "Print Design"
+      ],
+      "projects": [
+        {
+          "title": "Mezuzot Campaign",
+          "media": "ketarim-mezuzot.jpg",
+          "type": "image"
+        },
+        {
+          "title": "Tefillin Campaign",
+          "media": "ketarim-tefillin.jpg",
+          "type": "image"
+        }
+      ]
+    },
+    {
+      "slug": "kanfie-nesharim",
+      "name": "Kanfie Nesharim",
+      "logo": "kanfie-nesharim-logo.png",
+      "categories": [
+        "Logo Design",
+        "Brand Identity"
+      ],
+      "projects": [
+        {
+          "title": "Brand Mark",
+          "media": "kanfie-nesharim-logo.png",
+          "type": "image"
+        }
+      ]
+    },
+    {
+      "slug": "jfkosher",
+      "name": "JFKosher",
+      "logo": "jfkosher-logo.svg",
+      "categories": [
+        "Logo Design",
+        "Brand Identity"
+      ],
+      "projects": [
+        {
+          "title": "Brand Mark",
+          "media": "jfkosher-logo.svg",
+          "type": "image"
+        }
+      ]
+    },
+    {
+      "slug": "ohel-yaakov",
+      "name": "כולל להוראה – אהל יעקב",
+      "logo": "ohel-yaakov-logo.png",
+      "categories": [
+        "Logo Design",
+        "Brand Identity"
+      ],
+      "projects": [
+        {
+          "title": "Brand Mark",
+          "media": "ohel-yaakov-logo.png",
+          "type": "image"
+        }
+      ]
+    }
+  ]
+}
