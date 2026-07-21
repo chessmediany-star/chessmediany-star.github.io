@@ -306,3 +306,12 @@
 .hero .piece .heroChessPanel p{max-width:34ch;color:#aaa59b;text-shadow:0 2px 12px #000}
 @media(max-width:900px){.hero .piece{right:2vw;top:175px;width:46vw;height:560px;opacity:1}.hero .piece .heroChessSymbol{top:35%;font-size:clamp(145px,21vw,210px)}.hero .piece .heroChessPanel{left:7%;right:3%;bottom:50px;padding:0}.hero .piece .heroChessPanel strong{font-size:clamp(28px,4vw,38px)}}
 @media(max-width:600px){.hero .piece{right:-20vw;top:190px;width:76vw;height:500px;opacity:.74}.hero .piece .heroChessSymbol{top:34%;font-size:36vw}.hero .piece .heroChessPanel{left:16%;right:7%;bottom:60px;padding:0}.hero .piece .heroChessPanel strong{font-size:22px}.hero .piece .heroChessPanel p{display:none}}
+
+
+/* 2026-07-21 horizontal trusted-client showcase */
+.trustedClients{grid-template-columns:.78fr 1.72fr;align-items:center}
+.clientLogoGrid{width:min(100%,880px);aspect-ratio:16/7;align-self:center;justify-self:end}
+.clientLogo{padding:clamp(26px,4vw,58px)}
+.clientLogo img{max-width:72%;max-height:46%}
+@media(max-width:900px){.trustedClients{grid-template-columns:1fr;gap:42px}.clientLogoGrid{width:100%;max-width:780px;justify-self:stretch;aspect-ratio:16/7}}
+@media(max-width:600px){.clientLogoGrid{aspect-ratio:16/9}.clientLogo{padding:24px}.clientLogo img{max-width:82%;max-height:46%}}
