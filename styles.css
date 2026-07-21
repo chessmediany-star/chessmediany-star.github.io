@@ -171,3 +171,21 @@
 .piece{height:auto;max-height:none;aspect-ratio:2/3}
 @media(max-width:900px){.piece{height:auto;max-height:none;aspect-ratio:2/3}}
 @media(max-width:600px){.piece{height:auto;max-height:none;aspect-ratio:2/3}}
+
+
+/* 2026-07-21 hero headline typewriter */
+.heroCopy h1 .typeLine{white-space:nowrap}
+.heroCopy h1 .typeCursor{
+  display:inline-block;
+  width:3px;
+  height:.78em;
+  margin-left:10px;
+  vertical-align:-.04em;
+  background:var(--gold);
+  box-shadow:0 0 14px rgba(184,155,94,.5);
+  animation:typeCursorBlink .75s steps(1,end) infinite;
+}
+.heroCopy h1.typingComplete .typeCursor{animation-duration:1s}
+@keyframes typeCursorBlink{0%,48%{opacity:1}49%,100%{opacity:0}}
+@media(max-width:600px){.heroCopy h1 .typeCursor{width:2px;margin-left:5px}}
+@media(prefers-reduced-motion:reduce){.heroCopy h1 .typeCursor{display:none}}
